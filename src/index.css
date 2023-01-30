@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.react-player {
+	height: 77vh !important;
+	width: 100% !important;
+}
