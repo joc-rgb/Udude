@@ -3,7 +3,6 @@ import VideoCard from "./VideoCard";
 import ChannelCard from "./ChannelCard";
 
 const Videos = ({ videos }) => {
-	console.log(videos);
 	return (
 		<div className='w-full flex flex-wrap justify-start gap-4'>
 			{videos.map((i, id) => (

@@ -17,7 +17,7 @@ const SearchFeed = () => {
 	}, [searchTerm]);
 	return (
 		<div className='flex flex-col w-full'>
-			<p className='font-semibold text-black'>
+			<p className='font-semibold text-black  py-4 text-xl'>
 				Search Results for <span className='text-purple-800'>{searchTerm}</span>
 			</p>
 			<Videos videos={videos} />

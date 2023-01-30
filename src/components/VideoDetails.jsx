@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UDudeContext } from "../context/UDudeContext";
 import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
+import { format } from "date-fns-tz";
 import { MdCheckCircle } from "react-icons/md";
 import Videos from "./Videos";
 
@@ -36,7 +37,9 @@ const VideoDetails = () => {
 				<div className='flex justify-between'>
 					<Link to={`/channel/${videoDetails?.snippet?.channelId}`}>
 						<div className='flex items-center text-center gap-1 '>
-							<p className=' gap-2'>{videoDetails?.snippet?.channelTitle}</p>
+							<p className=' gap-2 text-sm font-bold'>
+								{videoDetails?.snippet?.channelTitle}
+							</p>
 							<MdCheckCircle className='font-bold' />
 						</div>
 					</Link>
@@ -50,10 +53,16 @@ const VideoDetails = () => {
 					</div>
 				</div>
 				<div className='flex flex-col'>
-					<p className='font-semibold text-base text-gray-500'>
-						Published At {videoDetails?.snippet?.publishedAt}
-					</p>
-					<p className='text-gray-800 text-xs '>
+					{videoDetails?.snippet?.publishedAt && (
+						<p className='font-semibold text-sm text-gray-500'>
+							Published At{" "}
+							{format(
+								new Date(videoDetails?.snippet?.publishedAt),
+								"yyyy-MM-dd HH:mm z"
+							)}
+						</p>
+					)}
+					<p className='text-gray-800 text-xs pt-5'>
 						{videoDetails?.snippet?.description}
 					</p>
 				</div>

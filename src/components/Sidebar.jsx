@@ -1,18 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import {
-	NavLink,
-	Router,
-	useLocation,
-	useNavigate,
-	useParams,
-} from "react-router-dom";
-import {
-	MdOutlineShareLocation,
-	MdHome,
-	MdOutlineQueueMusic,
-	MdOutlineBarChart,
-	MdLibraryMusic,
-} from "react-icons/md";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { MdHome } from "react-icons/md";
 import { categories } from "../utils/constant";
 import { UDudeContext } from "../context/UDudeContext";
 
@@ -86,7 +75,12 @@ const Sidebar = () => {
 						onClick={() => setDrawerOpen(false)}
 					></div>
 
-					<div className='z-50 h-screen  flex flex-col pt-8 items-center w-72  bg-slate-200 text-purple-500 gap-5 fixed'>
+					<motion.div
+						className='z-50 h-screen  flex flex-col pt-8 items-center w-72  bg-slate-200 text-purple-500 gap-5 fixed'
+						initial={{ opacity: 0, x: -200 }}
+						animate={{ opacity: 1, x: 0 }}
+						exit={{ opacity: 0, x: -200 }}
+					>
 						<p className='font-bold text-2xl text-purple-500'>UDude</p>
 						<NavLinks handleClick={handleClick} />
 						<div className='mt-10 flex flex-col gap-1 w-full'>
@@ -105,7 +99,7 @@ const Sidebar = () => {
 								</div>
 							))}
 						</div>
-					</div>
+					</motion.div>
 
 					{/* Mobile sidebar */}
 					<div className='md:hidden block '></div>

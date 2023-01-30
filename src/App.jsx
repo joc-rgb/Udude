@@ -9,7 +9,7 @@ function App() {
 	const { setDrawerOpen } = useContext(UDudeContext);
 	return (
 		<BrowserRouter>
-			<div className='flex overflow-hidden min-w-screen bg-slate-100 '>
+			<div className='flex overflow-hidden min-w-screen bg-slate-100 font-poppins'>
 				<Sidebar />
 				<div className='flex flex-col flex-1 min-w-0 overflow-auto pl-8'>
 					<div className='flex items-center w-full justify-between'>
