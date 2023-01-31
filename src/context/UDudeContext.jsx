@@ -7,7 +7,7 @@ export const UDudeProvider = ({ children }) => {
 	const [selected, setSelected] = useState("Home");
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	const [drawerOpen, setDrawerOpen] = useState(false);
-
+	const rapid_key = import.meta.env.VITE_RAPID_KEY
 	const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 	const options = {
 		params: {
@@ -15,7 +15,7 @@ export const UDudeProvider = ({ children }) => {
 		},
 
 		headers: {
-			"X-RapidAPI-Key": import.meta.env.VITE_RAPID_KEY,
+			"X-RapidAPI-Key": rapid_key,
 			"X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
 		},
 	};
