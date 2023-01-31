@@ -21,6 +21,7 @@ export const UDudeProvider = ({ children }) => {
 	};
 
 	const fetchYoutube = async (url) => {
+		console.log("key", import.meta.env.VITE_RAPID_KEY)
 		const { data } = await axios.get(`${BASE_URL}/${url}`, options);
 		return data;
 	};
